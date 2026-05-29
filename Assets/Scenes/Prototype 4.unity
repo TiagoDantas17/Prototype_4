@@ -200,6 +200,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fd5555088952419ebf0eb82e9096fa5, type: 3}
+--- !u!1 &501612742 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8812278646818019830, guid: 3b5ff299ce191c341b9b6d945737124e, type: 3}
+  m_PrefabInstance: {fileID: 5721389616989144885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &870383735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -291,7 +296,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   speed: 5
   hasPowerup: 0
-  powerIndicator: {fileID: 1034703868}
+  powerupIndicator: {fileID: 0}
+  normalStrength: 10
+  powerupStrength: 25
 --- !u!1 &1211016355
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,9 +716,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694c3b055f592ac4ea1b7160d19bd536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  speed: 2
+  speed: 20
   hasPowerup: 0
-  powerIndicator: {fileID: 1034703868}
+  powerupIndicator: {fileID: 1034703868}
+  normalStrength: 10
+  powerupStrength: 25
 --- !u!1001 &1403545340
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -845,9 +854,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   enemyPrefab: {fileID: 2486261903198071893, guid: 0618d78a50d1d3e44b9a7aa94d162ad1, type: 3}
-  powerupPrefab: {fileID: 0}
+  powerupPrefab: {fileID: 501612742}
   enemyCount: 0
-  waveNumber: 1
+  waveCount: 1
+  enemySpeed: 50
+  enemySpeedIncrease: 5
 --- !u!4 &1468400084
 Transform:
   m_ObjectHideFlags: 0
@@ -857,7 +868,38 @@ Transform:
   m_GameObject: {fileID: 1468400082}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.40629, y: 0.33596, z: 1.14587}
+  m_LocalPosition: {x: 4.81, y: 2.11, z: 1.14587}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1614222591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614222592}
+  m_Layer: 0
+  m_Name: Player Goal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1614222592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614222591}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -874,7 +916,7 @@ GameObject:
   - component: {fileID: 1692056860}
   - component: {fileID: 1692056859}
   m_Layer: 0
-  m_Name: focal Point
+  m_Name: Focal Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1040,3 +1082,4 @@ SceneRoots:
   - {fileID: 1468400084}
   - {fileID: 5721389616989144885}
   - {fileID: 870383735}
+  - {fileID: 1614222592}
